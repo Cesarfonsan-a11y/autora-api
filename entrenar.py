@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import r2_score, mean_absolute_error
 
-df = pd.read_csv('output-raw-fasecolda.csv', sep=None, engine='python', on_bad_lines='skip')
+df = pd.read_csv('output-raw-fasecolda.csv.gz', compression='gzip', sep=None, engine='python', on_bad_lines='skip')
 cols = ['nombreMarca','nombreReferencia','anioModelo','combustible','tipoCaja','transmision','cilindraje','valor','nombreCategoria']
 df2 = df[cols].copy()
 df2.columns = ['marca','referencia','anio','combustible','traccion','transmision','cilindraje','precio','categoria']
